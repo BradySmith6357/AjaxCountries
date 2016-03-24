@@ -5,12 +5,18 @@
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.min.js"></script>
-	<script type="text/javascript" src="../../server.js"></script>
 	<script type="text/javascript" src="../js/nameApp.Module.js"></script>
 	<script type="text/javascript" src="../js/nameApp.Factory.js"></script>
 	<script type="text/javascript" src="../js/nameApp.Troller.js"></script>
 </head>
 <body ng-controller="countroller">
+	<form ng-submit="searchCountries()">
+		<input type="text" ng-model="countries.name">
+		<input type="submit">
+	</form>
 	<button ng-click="showCountries()">Load Countries</button>
+	<div ng-repeat="country in countries">
+		<p>{{country.name}}</p>
+	</div>
 </body>
 </html>

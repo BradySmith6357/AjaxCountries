@@ -3,6 +3,7 @@ var express   		 = require('express');
 var bodyParser   	 = require('body-parser');
 var mongoose   		 = require("mongoose");
 var cookieParser 	 = require('cookie-parser');
+var countries		 = require('./models/countries.json')
 
 // Create Express App Object \\
 var app = express();
@@ -22,7 +23,11 @@ app.get("/", function(req, res){
 });
 
 app.get('/countries', function(req, res){
-	res.send('TEST')
+	res.send(countries)
+})
+
+app.get('/search', function(req, res){
+	console.log("req.body:", req.query.name)
 })
 
 
